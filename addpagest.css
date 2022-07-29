@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    justify-content: center;
+}
+main{
+    margin-top: 3rem ;
+    border: red solid 1px;
+    width: 60%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+}
