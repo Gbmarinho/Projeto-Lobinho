@@ -1,0 +1,73 @@
+*{margin: 0; padding: 0;}
+a{
+    text-decoration: none;
+}
+h1{
+    margin: 0;
+}
+.barra{
+    width: 50px;
+    /* margin-left: auto;
+    margin-right: auto; */
+    border-bottom: 4px solid #FFFFFF;
+    margin-bottom: 15px;
+}
+/* HEADER */
+header {
+    background-color: #85CDF5;
+    display: flex;
+    justify-content: center;
+
+    /* height: 70px; */
+}
+#content-header{
+    width: 70%;
+    display: flex;
+    border: 1px solid red;
+    justify-content: center;
+    align-items: center;
+}
+.img-header{
+    height: 65px;
+    background: grey;
+    width: 50px;
+    
+}
+
+/* Main */
+
+    /* Adote Lobinho */
+#adoteLobinho{
+    /* background: url(../imagens/logo.png); */
+    background-color: blue;
+    display: flex;
+    justify-content: center;
+}
+#adoteLobinho div{
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 1px solid red;
+    margin-top: auto;
+    color:#FFFFFF;
+    text-align: center;
+    padding-top: 15px;
+    font-size: 1.6em;
+    height: 350px;
+}
+#adoteLobinho div h1{
+    margin-bottom: 20px;
+    
+}
+#adoteLobinho div p{
+    
+    font-size: 17px;
+}
+    /* Sobre */
+#sobre{
+    background-color: #2C5680;
+    height: 200px;
+}
+
