@@ -1,17 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300&display=swap');
 *{
     margin: 0;
     padding: 0;
+    font-family: 'Darker Grotesque', sans-serif;
 }
-body{
+main{
     display: flex;
     justify-content: center;
 }
-main{
+#mainmenu{
     margin-top: 3rem ;
-    border: red solid 1px;
-    width: 60%;
+    border: black solid 3px;
+    width: 50%;
     height: auto;
     display: flex;
     justify-content: center;
     padding: 2rem;
+    flex-direction: column;
+}
+#titlemenu{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+#tile{
+    font-size: 100px;
+    font-weight: 600;
+
+}
+#menubody{
+    margin-top: 5vh;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    
+}
+#nameyear{
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+#name{
+    
+    width: 80%;
+}
+#namee{
+    margin-bottom: 10px;
+}
+#nametext{
+    width: 100%;
+
+}
+#year{
+    width: 15%;
+}
+#yearr{
+    margin-bottom: 10px;
+}
+#yeartext{
+    width: 100%;
+}
+#link{
+    padding: 5px;
+    margin: 10px;
+}
+#linkk{
+    margin-bottom: 10px;
+}
+#linktext{
+    width: 100% 
+}
+#descr{
+    padding: 5px;
+    margin: 10px;
+}
+#descrr{
+    margin-bottom: 10px;
+}
+#descrtext{
+    width: 100%;   
+    height: 20vh;
+}
+#sendb{
+    color: white;
+    background-color: #2C5680;
+    margin-top: 5vh;
+    border: none;
+    width: 15%;
+    padding: 10px;
+    align-self: center;
 }
