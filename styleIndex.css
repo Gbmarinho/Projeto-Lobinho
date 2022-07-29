@@ -6,10 +6,10 @@ h1{
     margin: 0;
 }
 .barra{
-    width: 50px;
+    width: 99px;
     /* margin-left: auto;
     margin-right: auto; */
-    border-bottom: 4px solid #FFFFFF;
+    border-bottom: 5px solid #FFFFFF;
     margin-bottom: 15px;
 }
 /* HEADER */
@@ -17,7 +17,6 @@ header {
     background-color: #85CDF5;
     display: flex;
     justify-content: center;
-
     /* height: 70px; */
 }
 #content-header{
@@ -27,18 +26,16 @@ header {
     align-items: center;
 }
 .img-header{
-    height: 65px;
-    background: grey;
-    width: 50px;
-    
+    margin: 12px 0 6px 0;
 }
 
 /* Main */
 
     /* Adote Lobinho */
 #adoteLobinho{
-    /* background: url(../imagens/logo.png); */
-    background-color: blue;
+    background: url(lobo-image.png) no-repeat;
+    background-position: center center;
+    background-size: cover;
     display: flex;
     justify-content: center;
 }
@@ -52,16 +49,14 @@ header {
     color:#FFFFFF;
     text-align: center;
     padding-top: 15px;
-    font-size: 2em;
+    font-size: 2.5em;
 }
 #adoteLobinho div h1{
     display: flex;
     align-items: center;
-    margin-top: 140px;
+    margin-top: 92px;
     margin-bottom: 20px;
     height: 130px;
-    border: 1px solid red;
-    
 }
 #adoteLobinho div p{
     font-size: 22px;
@@ -70,14 +65,18 @@ header {
     /* Sobre */
 #sobre{
     background-color: #2C5680;
+    border: 1px solid green;
     display: flex;
+    align-items: center;
     justify-content: center;
-    height: 250px;
+    flex-direction: column;
+    
     padding-top: 20px;
     padding-bottom: 35px;
 }
 #sobre div{
     width: 70%;
+    border: 1px solid green;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -114,14 +113,16 @@ header {
     font-size: 35px;
 }
 #content-valores{
+    min-width: 410px;
     width: 70%;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 .block{
-    width: 23%;
+    width: 15%;
     height: 380px;
-    min-width: 157px;
+    min-width: 199px;
     margin: 15px 2px;
     display: flex;
     flex-direction: column;
