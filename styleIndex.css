@@ -67,7 +67,6 @@ header {
     /* Sobre */
 #sobre{
     background-color: #2C5680;
-    border: 1px solid green;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -78,12 +77,13 @@ header {
 }
 #sobre div{
     width: 70%;
-    border: 1px solid green;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     text-align: center;
+    padding-top: 30px;
+    padding-bottom: 40px;
 }
 #sobre div h2{
     color: #DEB959;
