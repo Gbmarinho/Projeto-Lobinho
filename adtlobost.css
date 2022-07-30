@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Darker Grotesque', sans-serif;
+}
+main{
+    display: flex;
+    justify-content: center;
+}
+#conteinerall{
+    margin-top: 3rem ;
+    width: 50%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+    flex-direction: column;
+
+}
+#menubody{
+    margin-top: 5vh;
+    height: auto;
+    display: flex;
+    flex-direction: column; 
+}
+#nameyear{
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+#name{
+    
+    width: 70%;
+}
+#namee{
+    font-weight: 500;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+#nametext{
+    width: 100%;
+
+}
+#year{
+    width: 20%;
+}
+#yearr{
+    font-weight: 500;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+#yeartext{
+    width: 100%;
+}
+#email{
+    padding: 5px;
+    margin: 10px;
+}
+#emaill{
+    font-weight: 500;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+#emailtext{
+    width: 100% 
+}
+.textbox{
+    border: none;
+    border-bottom: 1px solid black;
+    font-weight: bold;
+    font-size: 20px;
+}
+#imgtitle{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    align-content: center;
+    
+}
+#img{
+    width: auto;
+    height: auto;
+}
+#guara{
+    width: 250px;
+    height: 250px;
+    border-radius: 360px;
+}
+#title{
+    padding-left: 17%;
+    padding-right: 17%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+#tit{
+    font-weight: 800;
+    font-size: 60px;
+    text-align: center;
+}
+#id{
+    font-size: xx-large;
+    font-weight: 700;
+    font-size: 25px
+}
+#sendb{
+    color: white;
+    background-color: #2C5680;
+    margin-top: 5vh;
+    border: none;
+    width: 10%;
+    padding: 15px;
+    align-self: center;
+    cursor: pointer;
+    min-width: 70px;
+    font-size: 20px;
+    font-weight: 800;
+}
