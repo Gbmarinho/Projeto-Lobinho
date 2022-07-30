@@ -22,10 +22,12 @@ main{
     margin: auto;
     display: flex;
     justify-content: center;
+    width: 80%;
+    text-align: center;
 }
 #tile{
     font-size: 100px;
-    font-weight: 600;
+    font-weight: 700;
 
 }
 #menubody{
@@ -43,7 +45,7 @@ main{
 }
 #name{
     
-    width: 80%;
+    width: 85%;
 }
 #namee{
     margin-bottom: 10px;
@@ -53,7 +55,7 @@ main{
 
 }
 #year{
-    width: 15%;
+    width: 10%;
 }
 #yearr{
     margin-bottom: 10px;
@@ -87,7 +89,9 @@ main{
     background-color: #2C5680;
     margin-top: 5vh;
     border: none;
-    width: 15%;
+    width: 10%;
     padding: 10px;
     align-self: center;
+    cursor: pointer;
+    min-width: 70px;
 }
