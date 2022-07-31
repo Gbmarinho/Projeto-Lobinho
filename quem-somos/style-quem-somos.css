@@ -1,15 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
 *{
     margin: 0;
     padding: 0;
+    font-weight: 300;
     font-family: 'Darker Grotesque', sans-serif;
+
 }
 /* HEADER */
 header {
     background-color: #85CDF5;
     display: flex;
     justify-content: center;
-    height: 70px; 
+    height: 30%;
+
 }
 #content-header{
     width: 70%;
@@ -22,7 +27,12 @@ header {
     left: -7px;
     margin: 12px 0 6px 0;
 }
+span {
+    font-weight: 600;
+}
 .link a{
+    font-weight: 600;
+    text-decoration: none;
     font-size: 28px;
     color: #333333;
 }
@@ -53,124 +63,35 @@ header {
     transform: translateX(0);
   }
 
-
 /* MAIN */
 main{
+    margin-top: 4vh;
     display: flex;
     justify-content: center;
-}
-#conteinerall{
-    margin-top: 3rem ;
-    width: 50%;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    padding: 2rem;
     flex-direction: column;
-
-}
-#menubody{
-    margin-top: 5vh;
-    height: auto;
-    display: flex;
-    flex-direction: column; 
-}
-#nameyear{
-    padding: 5px;
-    display: flex;
-    justify-content: space-between;
-    margin: 10px;
-}
-#name{
-    
-    width: 70%;
-}
-#namee{
-    font-weight: 500;
-    font-size: 30px;
-    margin-bottom: 10px;
-}
-#nametext{
-    width: 100%;
-
-}
-#year{
-    width: 20%;
-}
-#yearr{
-    font-weight: 500;
-    font-size: 30px;
-    margin-bottom: 10px;
-}
-#yeartext{
-    width: 100%;
-}
-#email{
-    padding: 5px;
-    margin: 10px;
-}
-#emaill{
-    font-weight: 500;
-    font-size: 30px;
-    margin-bottom: 10px;
-}
-#emailtext{
-    width: 100% 
-}
-.textbox{
-    border: none;
-    border-bottom: 1px solid black;
-    font-weight: bold;
-    font-size: 20px;
-}
-#imgtitle{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content:center;
-    align-content: center;
-    
-}
-#imgbox{
-    width: auto;
-    height: auto;
-}
-#img{
-    width: 200px;
-    height: 200px;
-    border-radius: 360px;
+    align-items: center;
+    margin-top: 5%;
+    margin-bottom: 10%;
 }
 #title{
-    padding-left: 17%;
-    padding-right: 17%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
-#tit{
+    font-family: 'Roboto', sans-serif;
+    font-stretch: 800;
+    font-size: larger;
     font-weight: 800;
-    font-size: 60px;
-    text-align: center;
+    font-size: 80px;
+    margin-bottom: 1%;
 }
-#id{
-    font-size: xx-large;
-    font-weight: 700;
-    font-size: 25px
-}
-#sendb{
-    color: white;
-    background-color: #2C5680;
-    margin-top: 5vh;
-    border: none;
-    width: 10%;
-    padding: 15px;
-    align-self: center;
-    cursor: pointer;
-    min-width: 70px;
-    font-size: 20px;
-    font-weight: 800;
+#abt{
+    
+    width: 65%;
+    font-size: x-large;
+    font-weight: bold;
 }
 /* FOOTER */
 footer{
+    margin-top: 7vh;
+    border-top: 5px solid;
+    border-image: linear-gradient(90deg, rgba(222,185,89,1) 43%, rgba(44,86,128,1) 100%) 1;
     background-color: #333333;
     display: flex;
     justify-content: center;
@@ -191,6 +112,7 @@ footer{
     color: white;
 }
 #mapa{
+    margin-top: 2.6%;
     margin-right: 25px;
 }
 .img-footer{

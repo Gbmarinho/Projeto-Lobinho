@@ -1,7 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300;600&display=swap');
 *{
     margin: 0;
     padding: 0;
+
     font-family: 'Darker Grotesque', sans-serif;
 }
 /* HEADER */
@@ -9,7 +10,7 @@ header {
     background-color: #85CDF5;
     display: flex;
     justify-content: center;
-    height: 70px;
+    height: 30%; 
 }
 #content-header{
     width: 70%;
@@ -22,7 +23,12 @@ header {
     left: -7px;
     margin: 12px 0 6px 0;
 }
+span {
+    font-weight: 600;
+}
 .link a{
+    font-weight: 600;
+    text-decoration: none;
     font-size: 28px;
     color: #333333;
 }
@@ -52,39 +58,29 @@ header {
   .underline-bottom:hover:before, .underline-bottom:focus:before, .underline-bottom:active:before {
     transform: translateX(0);
   }
-/* MAIN */
-main{
-    display: flex;
-    justify-content: center;
-}
-#mainmenu{
+
+
+  /* MAIN */
+  main{
+      display: flex;
+      justify-content: center;
+      font-weight: 600;
+    }
+#conteinerall{
     margin-top: 3rem ;
-    border: black solid 3px;
     width: 50%;
     height: auto;
     display: flex;
     justify-content: center;
     padding: 2rem;
     flex-direction: column;
-}
-#titlemenu{
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    width: 80%;
-    text-align: center;
-}
-#tile{
-    font-size: 100px;
-    font-weight: 700;
-
+    
 }
 #menubody{
     margin-top: 5vh;
     height: auto;
     display: flex;
-    flex-direction: column;
-    
+    flex-direction: column; 
 }
 #nameyear{
     padding: 5px;
@@ -94,55 +90,101 @@ main{
 }
 #name{
     
-    width: 85%;
+    width: 70%;
 }
 #namee{
+    font-weight: 700;
+    font-size: 30px;
     margin-bottom: 10px;
 }
 #nametext{
     width: 100%;
-
+    
 }
 #year{
-    width: 10%;
+    width: 20%;
 }
 #yearr{
+    font-weight: 700;
+    font-size: 30px;
     margin-bottom: 10px;
 }
 #yeartext{
     width: 100%;
 }
-#link{
+#email{
+    
     padding: 5px;
     margin: 10px;
 }
-#linkk{
+#emaill{
+    font-weight: 700;
+    font-size: 30px;
     margin-bottom: 10px;
 }
-#linktext{
+#emailtext{
     width: 100% 
 }
-#descr{
-    padding: 5px;
-    margin: 10px;
+.textbox{
+    border: none;
+    border-bottom: 1px solid black;
+    font-weight: bold;
+    font-size: 20px;
 }
-#descrr{
-    margin-bottom: 10px;
+#imgtitle{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    align-content: center;
+    
 }
-#descrtext{
-    width: 100%;   
-    height: 20vh;
+#imgbox{
+    width: auto;
+    height: auto;
+}
+#img{
+    width: 200px;
+    height: 200px;
+    border-radius: 360px;
+}
+#title{
+    padding-left: 17%;
+    padding-right: 17%;
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    align-self: start;
+}
+#tit{
+    margin: 0%;
+    width: 100%;
+
+    font-weight: 800;
+    font-size: 60px;
+    text-align: center;
+}
+#id{
+    font-size: xx-large;
+    font-weight: 700;
+    font-size: 15px
 }
 #sendb{
     color: white;
     background-color: #2C5680;
     margin-top: 5vh;
     border: none;
-    width: 10%;
-    padding: 10px;
+    height: 18%;
+    width: 18%;
+    padding: 13px;
     align-self: center;
     cursor: pointer;
-    min-width: 70px;
+    min-width: 150px;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+input {
+    height: 40%;
 }
 /* FOOTER */
 footer{
@@ -169,6 +211,7 @@ footer{
     color: white;
 }
 #mapa{
+    margin-top: 2.6%;
     margin-right: 25px;
 }
 .img-footer{

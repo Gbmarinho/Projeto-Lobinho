@@ -66,7 +66,7 @@ header {
 
     /* Adote Lobinho */
 #adoteLobinho{
-    background: url(lobo-image.png) no-repeat;
+    background: url(../assets/lobo-image.png) no-repeat;
     background-position: center center;
     background-size: cover;
     display: flex;
@@ -306,6 +306,7 @@ footer{
     color: white;
 }
 #mapa{
+    margin-top: 2.6%;
     margin-right: 25px;
 }
 .img-footer{
