@@ -8,12 +8,20 @@ btn.addEventListener("click", () => {
     var h = isNaN(anos.value)
     var n = nome.value
     var j = isNaN(nome.value)
+    var l = isNaN(linkFoto.value)
+    var d = isNaN(descricao.value)
     if((nome.value.trim() == "")||(anos.value.trim() == "")||(linkFoto.value.trim() == "")||(descricao.value.trim() == "")){
         alert("Nao deixe nada sem resposta!")
     }else if(h == true){
-        alert("A idade colocada esta errada")
+        alert("A idade apenas em numeros")
     }else if((j != true) || ((n.length < 4)||(n.length > 60))){
         alert("Nome invalido")
+    }else if((anos.value < 0)||(anos.value > 100)){
+        alert("Idade invalida")
+    }else if(l != true){
+        alert("Link invalido")
+    }else if((d != true)||((descricao.value.length < 10)||(descricao.value.length > 255))){
+
     }else{
         var newLobo = new Object()
         newLobo.name = nome.value.trim()
@@ -21,5 +29,9 @@ btn.addEventListener("click", () => {
         newLobo.link_image = linkFoto.value.trim()
         newLobo.description = descricao.value.trim()
         console.log(newLobo)
+        nome.value = ""
+        anos.value = ""
+        linkFoto.value = ""
+        descricao.value = ""
     }
 })
