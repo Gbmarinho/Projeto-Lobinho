@@ -23,6 +23,7 @@ header {
 #content-header{
     width: 70%;
     display: flex;
+    min-width: 460px;
     justify-content: space-between;
     align-items: center;
 }
