@@ -26,8 +26,12 @@ btn.addEventListener("click", () => {
         var newLobo = new Object()
         newLobo.name = nome.value.trim()
         newLobo.age = anos.value.trim()
-        newLobo.link_image = linkFoto.value.trim()
+        newLobo.image_url = linkFoto.value.trim()
         newLobo.description = descricao.value.trim()
+        newLobo.adopter_name = null
+        newLobo.adopter_email = null
+        newLobo.adopter_age = null
+        newLobo.adopted = false
         console.log(newLobo)
         nome.value = ""
         anos.value = ""
