@@ -154,8 +154,8 @@ header {
     flex-wrap: wrap;
 }
 .block{
-    width: 15%;
-    height: 380px;
+    width: 20%;
+    height: 480px;
     min-width: 199px;
     margin: 15px 2px;
     display: flex;
@@ -168,6 +168,7 @@ header {
     justify-content: center;
     align-items: center;
     height: 43%;
+    width: 100%;
 }
 .text-block{
     height: 55%;
@@ -186,7 +187,7 @@ header {
 }
 .img-valores{
     /* border-radius: 360px; */
-    width: 162px;
+    width: 200px;
     height: 95%;
     border-radius: 180px;
     background-color: greenyellow;
@@ -218,15 +219,18 @@ header {
     align-items: center;
     flex-direction: column;
 }
+
 .bloco-lobo{
     display: flex;
-    width: 85%;
+    width: 100%;
+    max-width: 1053px;
     margin-bottom: 100px;
     justify-content: space-between;
     align-items: center;
     align-content: center;
     flex-wrap: wrap;
 }
+
 .img-left, .img-right{
     width: 410px;
     height: 315px;
