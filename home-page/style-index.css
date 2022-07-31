@@ -286,6 +286,9 @@ header {
     /* Footer */
 
 footer{
+    margin-top: 7vh;
+    border-top: 5px solid;
+    border-image: linear-gradient(90deg, rgba(222,185,89,1) 43%, rgba(44,86,128,1) 100%) 1;
     background-color: #333333;
     display: flex;
     justify-content: center;
