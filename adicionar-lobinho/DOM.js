@@ -32,7 +32,6 @@ btn.addEventListener("click", () => {
         newLobo.adopter_email = null
         newLobo.adopter_age = null
         newLobo.adopted = false
-        console.log(newLobo)
         nome.value = ""
         anos.value = ""
         linkFoto.value = ""
