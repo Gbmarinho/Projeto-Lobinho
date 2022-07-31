@@ -4,6 +4,56 @@
     padding: 0;
     font-family: 'Darker Grotesque', sans-serif;
 }
+/* HEADER */
+header {
+    background-color: #85CDF5;
+    display: flex;
+    justify-content: center;
+    height: 70px; 
+}
+#content-header{
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.img-header{
+    position: relative;
+    left: -7px;
+    margin: 12px 0 6px 0;
+}
+.link a{
+    font-size: 28px;
+    color: #333333;
+}
+.underline-bottom{
+    padding-bottom: 4px ;
+    display: inline-block;
+    vertical-align: middle;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    position: relative;
+    overflow: hidden;
+}
+.underline-bottom:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #333333;
+    height: 3px;
+    transform: translateX(180px);
+    transition-property: transform;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-out;
+  }
+  .underline-bottom:hover:before, .underline-bottom:focus:before, .underline-bottom:active:before {
+    transform: translateX(0);
+  }
+
+
 /* MAIN */
 main{
     display: flex;
