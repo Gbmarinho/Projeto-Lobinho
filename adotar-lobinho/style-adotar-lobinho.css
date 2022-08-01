@@ -19,6 +19,14 @@ header {
     justify-content: space-between;
     align-items: center;
 }
+@media (max-width:510px){
+    #content-header{
+        flex-direction: column;
+        justify-content: center;
+        min-width: none;
+        width: auto;
+    }
+}
 .img-header{
     position: relative;
     left: -7px;
@@ -271,5 +279,34 @@ footer{
     }
     #mapa{
         margin-bottom: 25px;
+    }
+}
+@media (max-width:470px){
+    #content-footer{
+        justify-content: center;
+        flex-direction: column;
+    }
+    #tudo-contato{
+        justify-content: center;
+    }
+    .div-partes{
+        justify-content: center;
+    }
+    #contato{
+        justify-content: center;
+    }
+    #mapa{
+        margin-left: 20px;
+        justify-content: center;
+        margin: none;
+    }
+    iframe{
+        width: 95%;
+        min-width: 140px;
+    }
+    .centraliza{
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
     }
 }
