@@ -2,12 +2,21 @@ const name = "Joao"
 const descricao = "Lindo"
 const imagem = "https://www.tutorialspoint.com/css/images/responsive.jpg"
 
+async function deleteWolve(id) {
+    const urlAPI = 'https://lobinhos.herokuapp.com/wolves/'
+
+    const fetchConfig = {
+        method: 'DELETE'
+    }
+
+    const response = await fetch(urlAPI + id, fetchConfig)
+}
+
 async function getWolve(id) {
     const urlAPI = 'https://lobinhos.herokuapp.com/wolves/'
 
     const fetchConfig = {
         method: 'GET'
-
     }
 
     const response = await fetch(urlAPI + id, fetchConfig)
@@ -26,9 +35,8 @@ async function inserirHTML() {
             <img src="${arrayAdotados['image_url']}" id="img-lobo">
             <div class="btns-adotar-excluir">
                 <button type="submit" id="btn-adotar" onclick="window.location.href='../adotar-lobinho/adotar-lobinho.html'">ADOTAR</button>
-                <button type="submit" id="btn-excluir">EXCLUIR</button>
+                <button type="submit" id="btn-excluir" onclick="deletar(${id})">EXCLUIR</button>
             </div>
-
         </div>
         <div  class="descrition">
             <p id="text">${arrayAdotados['description']}</p>
@@ -36,13 +44,13 @@ async function inserirHTML() {
     </div>`
 }
 
-const id = 266
+const id = 70
 inserirHTML(id)
 
+const btnExcluir = document.querySelector('#btn-excluir')
 
-const btnAdotar = document.querySelector('#btn-adotar')
-
-btnAdotar.addEventListener('click', async () => {
-  
+async function deletar(id){
+    deleteWolve(id);
+    alert("Parabens seu lobinho foi adotado com sucesso!!")
     window.location.replace("../home-page/index.html")
-})
+}

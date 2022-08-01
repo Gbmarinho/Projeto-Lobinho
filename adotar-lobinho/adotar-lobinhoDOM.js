@@ -74,9 +74,8 @@ btn.addEventListener("click", async () => {
             "adopter_email": adptemail.value.trim()
         }
     }
-
-        console.log(putBody)
-        putWolve(id, putBody)
+    
+        await putWolve(id, putBody)
 
         alert("Parabens seu lobinho foi adotado com sucesso!!")
         window.location.replace("../home-page/index.html")
