@@ -1,18 +1,18 @@
-// const urlAPI = 'https://lobinhos.herokuapp.com/wolves/'
+async function putWolve(id, fetchBody) {
+    const urlAPI = 'https://lobinhos.herokuapp.com/wolves/'
 
-// async function postWolve(id, fetchBody) {
-//     let fetchConfig = {
-//         method: "PUT",
-//         headers: {"Content-Type": "application/json"},
-//         body: JSON.stringify(fetchBody)
-//     }
+    let fetchConfig = {
+        method: "PUT",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(fetchBody)
+    }
 
-//     let urlPUTApi = urlAPI + id
-//     await fetch(urlPUTApi, fetchConfig)
-//     .then(resposta => resposta.json()
-//         .then(resp => {console.log(resp)}))
-//     .catch(error => console.log(error))
-// }
+    let urlPUTApi = urlAPI + id
+    await fetch(urlPUTApi, fetchConfig)
+    .then(resposta => resposta.json()
+        .then(resp => {console.log(resp)}))
+    .catch(error => console.log(error))
+}
 
 async function getWolve(id) {
     const urlAPI = 'https://lobinhos.herokuapp.com/wolves/'
@@ -28,7 +28,6 @@ async function getWolve(id) {
 
 async function inserirImgTitle(id){
     
-    // TEM QUE MUDAR O ID 
     const arrayAdotados = await getWolve(id)
     const imgtitle = document.querySelector("#imgtitle")
 
@@ -40,31 +39,41 @@ async function inserirImgTitle(id){
      </div>`
 }
 
+//  SO MUDAR ESSE ID 
+const id = 68
+
 const btn = document.querySelector("#sendb")
-const adptnome = document.querySelector("#nametext").value.trim()
-const adptanos = document.querySelector("#yeartext").value.trim()
-const adptemail = document.querySelector("#emailtext").value.trim()
+const adptnome = document.querySelector("#nametext")
+const adptanos = document.querySelector("#yeartext")
+const adptemail = document.querySelector("#emailtext")
 
-inserirImgTitle(21)
+inserirImgTitle(id)
 
-btn.addEventListener("click", async() => {
+btn.addEventListener("click", async () => {
     
-    if((adptnome == "")||(adptanos == "")||(adptemail == "")){
+    if((adptnome.value.trim() == "")||(adptanos.value.trim() == "")||(adptemail.value.trim() == "")){
         
         alert("Nao deixe nada sem resposta!")
 
-    }else if(isNaN(adptanos)){
+    }else if(isNaN(adptanos.value.trim())){
         
         alert("A idade colocada esta errada")
 
     }else{
         
-        var putBody = new Object()
-        putBody.adapter_name = adptnome
-        putBody.adapter_age = adptanos
-        putBody.adpter_email = adptemail
-        // console.log(putBody)
+        var putBody = {
+            
+            "wolf":{
+            "adopter_name": adptnome.value.trim(),
+            "adopter_age": adptanos.value.trim(),
+            "adopter_email": adptemail.value.trim()
+        }
+    }
 
-        // postWolve(id, putBody)
+        console.log(putBody)
+        putWolve(id, putBody)
+
+        alert("Parabens seu lobinho foi adotado com sucesso!!")
+        window.location.replace("../home-page/index.html")
     }
 })
