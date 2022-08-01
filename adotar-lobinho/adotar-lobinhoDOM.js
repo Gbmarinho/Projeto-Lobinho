@@ -1,3 +1,6 @@
+const show = require('../id');
+
+
 async function putWolve(id, fetchBody) {
     const urlAPI = 'https://lobinhos.herokuapp.com/wolves/'
 
@@ -41,7 +44,8 @@ async function inserirImgTitle(id){
 }
 
 //  SO MUDAR ESSE ID 
-const id = 68
+const id = show
+console.log(id)
 
 const btn = document.querySelector("#sendb")
 const adptnome = document.querySelector("#nametext")
