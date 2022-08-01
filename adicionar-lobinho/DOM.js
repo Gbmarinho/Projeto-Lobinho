@@ -1,3 +1,5 @@
+
+
 const btn = document.querySelector("#sendb")
 const nome = document.querySelector("#nametext")
 const anos = document.querySelector("#yeartext")

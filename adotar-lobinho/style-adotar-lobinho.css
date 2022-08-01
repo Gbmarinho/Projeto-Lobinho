@@ -149,8 +149,8 @@ span {
     border-radius: 360px;
 }
 #title{
-    padding-left: 17%;
-    padding-right: 17%;
+    padding-left: 5%;
+    padding-right: 5%;
     display: flex;
     justify-content: start;
     flex-direction: column;
