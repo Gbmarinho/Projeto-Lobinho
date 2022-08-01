@@ -126,7 +126,125 @@ main{
     }
 }
 
+#menulobinhos{
+    margin-top: 5vh;
+    border: red solid 1px;
+    width: 70%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+#exemploLobos{
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+    border: red solid 1px;
+    width: 100%;
 
+}
+#content-ex{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.escrito-lobosEx{
+    margin-bottom: 100px;
+}
+.escrito-lobosEx h2{
+    font-size: 45px;
+    color: #DEB959;
+}
+#lobos-content{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+}
+
+.bloco-lobo{
+    display: flex;
+    width: 100%;
+    max-width: 1053px;
+    margin-bottom: 100px;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.img-left, .img-right{
+    width: 410px;
+    height: 315px;
+}
+
+.img-left{
+    box-shadow: -40px -40px 0px 0px #2C5680;
+}
+.img-right{
+    box-shadow: 40px -40px 0px 0px #2C5680;
+}
+.info-lobo-right{
+    width: 400px;
+    text-align: right;
+}
+.info-lobo{
+    text-align: left;
+    width: 400px;
+}
+.info-lobo h1, .info-lobo-right h1{
+    line-height: 49px;
+    font-size: 30px;
+}
+.info-lobo h4, .info-lobo-right h4{
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 27px;
+    margin-bottom: 15px;
+    font-style: light;
+    color: #202020;
+}
+.info-lobo p, .info-lobo-right p{
+    line-height: 20px;
+    color: black;
+    font-size: 21px;
+}
+.namebutton-left{
+    display: flex;
+    justify-content: space-between;
+}
+.namebutton-right{
+    display: flex;
+    justify-content: space-between;
+}
+.btn-show{
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    border: none;
+    background-color: #DEB959;
+    width: 12%;
+    min-width: 102px;
+    font-size: xx-large;
+}
+@media (max-width: 1170px){
+    .left{
+        display: flex;
+        justify-content: center;
+    }
+    .right{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap-reverse;
+    }
+    .right-info{
+        text-align: left;
+    }
+    .namebutton-right{
+        flex-direction: row-reverse;
+    }
+}
 
 
 /* FOOTER */
