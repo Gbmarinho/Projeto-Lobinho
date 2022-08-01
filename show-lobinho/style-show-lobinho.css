@@ -23,6 +23,7 @@ header {
 #content-header{
     width: 70%;
     display: flex;
+    min-width: 460px;
     justify-content: space-between;
     align-items: center;
 }
@@ -83,14 +84,14 @@ main {
 
 
 h1 {
-    margin-top: 5%;
+    margin-top: 50px;
     padding-bottom: 5%;
     font-family: 'Roboto', sans-serif;
     
 }
 
 .container-lobo {
-
+    border: 1px solid red;
     width: 55%;
     height: 80%;
     display: flex;
@@ -98,9 +99,9 @@ h1 {
     flex-wrap: wrap;
     justify-content: space-evenly;
     margin-bottom: 3%;
-    
-    
-    
+    margin-top: 80px;
+    min-width: 330px;
+
 }
 
 .descrition {
@@ -154,25 +155,38 @@ h1 {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-
+    margin: 10px 0;
     
 }
 
 
 #btn-adotar {
     background-color: #7AAC3A;
+    text-decoration: none;
     color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
     font-family: 'Roboto', sans-serif;
     height: 90%;
     width: 40%;
     border: none;
     
 }
+#btn-adotar:visited{
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    font-family: 'Roboto', sans-serif;
+}
 
 #btn-excluir {
     background-color: #DE5959;
     color: #FFFFFF;
-    
+    border: 1px solid red;
     border: none;
     font-family: 'Roboto', sans-serif;
     height: 90%;
@@ -199,7 +213,7 @@ footer{
     display: flex;
 }
 .div-partes{
-    margin: 10px 0 20px;
+    margin: 10px 0 18px;
     display: flex;
     align-items: center;
     color: white;
@@ -220,12 +234,27 @@ footer{
     width: 15px;
 }
 .botao-quemSomos{
-    height: 30px;
-    width: 144px;
-    vertical-align: center;
+    text-decoration: none;
+    color: black;
+    display: flex;
+    justify-content: center;
+    width: 140px;
+    padding: 0 5px 0 5px;
+    border-radius: 5px;
     background-color: #DEB959;
     font-size: 25px;
     border: none;
+}
+.botao-quemSomos p{
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 7px;
+}
+.botao-quemSomos:visited{
+    text-decoration: none;
+    color: black;
 }
 #Desenvolvido{
     display: flex;
@@ -252,11 +281,12 @@ footer{
         justify-content: start;
         
     }
-
+    #text{text-align: center;}
     #contato {
         display: flex;
         flex-direction: column;
     }
+    
     #mapa{
         margin-bottom: 25px;
     }

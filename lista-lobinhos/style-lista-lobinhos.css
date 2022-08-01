@@ -15,6 +15,7 @@ header {
 }
 #content-header{
     width: 70%;
+    min-width: 460px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -72,14 +73,14 @@ main{
     width: 70%;
 }
 #searchadd{
-
     display: flex;
     height: auto;
     justify-content: space-between;
 }
 #search{
     border: black solid 2px;
-    width: 89%;
+    width: 85%;
+    margin-right: -20px;
     display: flex;
     align-content: center;
     align-items: center;
@@ -99,10 +100,13 @@ main{
     outline: 0;
 }
 #btnaddlobo{
+    text-decoration: none;
+    text-align: center;
     color: white;
     border: none;
     background-color: #DEB959;
-    width: 9%;
+    width: 12%;
+    min-width: 102px;
     font-size: xx-large;
 }
 #checkadotados{
@@ -113,7 +117,14 @@ main{
     margin-left: 20px;
     font-size: larger;
 }
-
+@media (max-width: 1055px){
+    #searchadd{
+        flex-direction: column;
+    }
+    #btnaddlobo{
+        margin-top: 10px;
+    }
+}
 
 
 
@@ -137,7 +148,7 @@ main{
     display: flex;
 }
 .div-partes{
-    margin: 10px 0 20px 0;
+    margin: 10px 0 18px 0;
     display: flex;
     align-items: center;
     color: white;
@@ -157,12 +168,27 @@ main{
     width: 15px;
 }
 .botao-quemSomos{
-    height: 30px;
-    width: 144px;
-    vertical-align: center;
+    text-decoration: none;
+    color: black;
+    display: flex;
+    justify-content: center;
+    width: 140px;
+    padding: 0 5px 0 5px;
+    border-radius: 5px;
     background-color: #DEB959;
     font-size: 25px;
     border: none;
+}
+.botao-quemSomos p{
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 7px;
+}
+.botao-quemSomos:visited{
+    text-decoration: none;
+    color: black;
 }
 #Desenvolvido{
     display: flex;

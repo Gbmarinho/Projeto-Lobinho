@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@500;600&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -14,6 +14,7 @@ header {
 }
 #content-header{
     width: 70%;
+    min-width: 460px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -148,8 +149,8 @@ span {
     border-radius: 360px;
 }
 #title{
-    padding-left: 17%;
-    padding-right: 17%;
+    padding-left: 5%;
+    padding-right: 5%;
     display: flex;
     justify-content: start;
     flex-direction: column;
@@ -205,7 +206,7 @@ footer{
     display: flex;
 }
 .div-partes{
-    margin: 10px 0 20px 0;
+    margin: 10px 0 18px 0;
     display: flex;
     align-items: center;
     color: white;
@@ -225,12 +226,27 @@ footer{
     width: 15px;
 }
 .botao-quemSomos{
-    height: 30px;
-    width: 144px;
-    vertical-align: center;
+    text-decoration: none;
+    color: black;
+    display: flex;
+    justify-content: center;
+    width: 140px;
+    padding: 0 5px 0 5px;
+    border-radius: 5px;
     background-color: #DEB959;
     font-size: 25px;
     border: none;
+}
+.botao-quemSomos p{
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 7px;
+}
+.botao-quemSomos:visited{
+    text-decoration: none;
+    color: black;
 }
 #Desenvolvido{
     display: flex;
