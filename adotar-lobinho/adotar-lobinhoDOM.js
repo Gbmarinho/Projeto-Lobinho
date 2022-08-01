@@ -19,6 +19,7 @@ async function getWolve(id) {
 
     const fetchConfig = {
         method: 'GET'
+
     }
 
     const response = await fetch(urlAPI + id, fetchConfig)
