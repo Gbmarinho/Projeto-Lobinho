@@ -34,7 +34,7 @@ async function inserirHTML() {
         <div class="img-btns"> 
             <img src="${arrayAdotados['image_url']}" id="img-lobo">
             <div class="btns-adotar-excluir">
-                <button type="submit" id="btn-adotar" onclick="window.location.href='../adotar-lobinho/adotar-lobinho.html'">ADOTAR</button>
+                <button type="submit" id="btn-adotar" onclick="adotar()">ADOTAR</button>
                 <button type="submit" id="btn-excluir" onclick="deletar(${id})">EXCLUIR</button>
             </div>
         </div>
@@ -53,4 +53,8 @@ async function deletar(id){
     deleteWolve(id);
     alert("Parabens seu lobinho foi adotado com sucesso!!")
     window.location.replace("../home-page/index.html")
+}
+
+async function adotar(){
+    window.location.href='../adotar-lobinho/adotar-lobinho.html'
 }
