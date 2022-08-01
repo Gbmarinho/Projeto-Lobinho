@@ -100,6 +100,8 @@ main{
     outline: 0;
 }
 #btnaddlobo{
+    text-decoration: none;
+    text-align: center;
     color: white;
     border: none;
     background-color: #DEB959;
