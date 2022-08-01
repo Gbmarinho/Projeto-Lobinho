@@ -1,3 +1,6 @@
+const name = "Joao"
+const descricao = "Lindo"
+const imagem = "https://i.em.com.br/2Md-OjVI5nxR3eoNI9vsPVRyiEA=/790x/smart/imgsapp.em.com.br/app/noticia_127983242361/2017/09/01/897198/20170901183847385809e.caveirao"
 
 const main = document.querySelector("main")
 main.innerHTML = `<h1>${name}</h1>
