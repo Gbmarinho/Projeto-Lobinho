@@ -136,7 +136,6 @@ main{
 
 #menulobinhos{
     margin-top: 5vh;
-    border: red solid 1px;
     width: 70%;
     height: auto;
     display: flex;
@@ -146,9 +145,7 @@ main{
     display: flex;
     justify-content: center;
     padding-top: 30px;
-    border: red solid 1px;
     width: 100%;
-
 }
 #content-ex{
     width: 100%;
@@ -234,6 +231,18 @@ main{
     background-color: #DEB959;
     width: 12%;
     min-width: 102px;
+    font-size: xx-large;
+    padding: 5px;
+}
+.btn-adotado{
+    padding: 5px; ;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    border: none;
+    background-color:#7AAC3A;
+    width: 12%;
+    min-width: 120px;
     font-size: xx-large;
 }
 @media (max-width: 1170px){
