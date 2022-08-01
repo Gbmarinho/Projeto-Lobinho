@@ -1,3 +1,20 @@
+const urlAPI = 'https://lobinhos.herokuapp.com/wolves/'
+
+async function postWolve(id, fetchBody) {
+    let fetchConfig = {
+        method: "PUT",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(fetchBody)
+    }
+
+    let urlPUTApi = urlAPI + id
+    await fetch(urlPUTApi, fetchConfig)
+    .then(resposta => resposta.json()
+        .then(resp => {console.log(resp)}))
+    .catch(error => console.log(error))
+}
+
+
 const btn = document.querySelector("#sendb")
 const adptnome = document.querySelector("#nametext")
 const adptanos = document.querySelector("#yeartext")
@@ -13,7 +30,10 @@ btn.addEventListener("click", () => {
         putBody.adapter_name = adptnome.value.trim()
         putBody.adapter_age = adptanos.value.trim()
         putBody.adpter_email = adptemail.value.trim()
-        putBody.adopted = true
+        console.log(putBody)
+        
+
+        postWolve(id, putBody)
     }
     
 })
