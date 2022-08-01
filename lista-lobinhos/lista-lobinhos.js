@@ -23,3 +23,8 @@ checkbox.addEventListener('change', async function() {
 
     }
   });
+
+function show(){
+    window.location.replace("../show-lobinho/show-lobinho.html")
+    console.log("to clickando")
+}
