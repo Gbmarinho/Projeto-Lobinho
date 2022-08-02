@@ -1,4 +1,3 @@
-
 async function putWolve(id, fetchBody) {
     const urlAPI = 'https://lobinhos.herokuapp.com/wolves/'
 
@@ -20,62 +19,63 @@ async function getWolve(id) {
 
     const fetchConfig = {
         method: 'GET'
-
     }
 
     const response = await fetch(urlAPI + id, fetchConfig)
-    const res = await response.json()
-    return res
+    const arrayJSON = await response.json()
+    return arrayJSON
 }
 
-async function inserirImgTitle(id){
+async function insertImgAndName(id){
     
-    const arrayAdotados = await getWolve(id)
-    const imgtitle = document.querySelector("#imgtitle")
+    const arrayToAdopt = await getWolve(id)
+    const imgAndName = document.querySelector("#imgtitle")
 
-    imgtitle.innerHTML = 
-    `<div id="imgbox"><img src="${arrayAdotados['image_url']}" id="img"></div>
+    imgAndName.innerHTML = 
+    `<div id="imgbox"><img src="${arrayToAdopt.image_url}" id="img"></div>
      <div id="title">
-        <h1 id="tit">Adote o(a) ${arrayAdotados['name']}</h1>
-        <p id="id">ID:${arrayAdotados['id']}</p>
+        <h1 id="tit">Adote o(a) ${arrayToAdopt.name}</h1>
+        <p id="id">ID:${arrayToAdopt.id}</p>
      </div>`
 }
 
-//  SO MUDAR ESSE ID 
-const id = sessionStorage.getItem('alfandegadoid')
-console.log(id)
+function funcsPage(){
+    const id = sessionStorage.getItem('alfandegadoid')
 
-const btn = document.querySelector("#sendb")
-const adptnome = document.querySelector("#nametext")
-const adptanos = document.querySelector("#yeartext")
-const adptemail = document.querySelector("#emailtext")
+    const button = document.querySelector("#sendb")
+    const toAdoptName = document.querySelector("#nametext")
+    const toAdoptAge = document.querySelector("#yeartext")
+    const toAdoptEmail = document.querySelector("#emailtext")
 
-inserirImgTitle(id)
+    insertImgAndName(id)
 
-btn.addEventListener("click", async () => {
-    
-    if((adptnome.value.trim() == "")||(adptanos.value.trim() == "")||(adptemail.value.trim() == "")){
+    button.addEventListener("click", async () => {
         
-        alert("Nao deixe nada sem resposta!")
-
-    }else if(isNaN(adptanos.value.trim())){
-        
-        alert("A idade colocada esta errada")
-
-    }else{
-        
-        var putBody = {
+        if((toAdoptName.value.trim() == "")||(toAdoptAge.value.trim() == "")||(toAdoptEmail.value.trim() == "")){
             
-            "wolf":{
-            "adopter_name": adptnome.value.trim(),
-            "adopter_age": adptanos.value.trim(),
-            "adopter_email": adptemail.value.trim()
-        }
-    }
-    
-        await putWolve(id, putBody)
+            alert("Nao deixe nada sem resposta!")
 
-        alert("Parabens seu lobinho foi adotado com sucesso!!")
-        window.location.replace("../home-page/index.html")
-    }
-})
+        }else if(isNaN(toAdoptAge.value.trim())){
+            
+            alert("A idade colocada esta errada")
+
+        }else{
+            
+            var putBody = {
+                
+                "wolf":{
+                "adopter_name": toAdoptName.value.trim(),
+                "adopter_age": toAdoptAge.value.trim(),
+                "adopter_email": toAdoptEmail.value.trim()
+            }
+        }
+        
+            await putWolve(id, putBody)
+
+            alert("Parabens seu lobinho foi adotado com sucesso!!")
+            window.location.replace("../home-page/index.html")
+        }
+    })
+}
+
+funcsPage()
