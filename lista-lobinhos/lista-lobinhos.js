@@ -35,10 +35,10 @@ async function carregarpagina(){
     
 }
 carregarpagina()
-var alfandegadoid = 87
+var alfandegadoid 
 
 function show(id){
-    alfandegadoid = id
+    sessionStorage.setItem('alfandegadoid', id);
     window.location.replace("../show-lobinho/show-lobinho.html")
 }
 function mostrarpadotar(array){

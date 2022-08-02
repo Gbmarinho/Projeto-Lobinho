@@ -1,5 +1,3 @@
-const show = require('../id');
-
 
 async function putWolve(id, fetchBody) {
     const urlAPI = 'https://lobinhos.herokuapp.com/wolves/'
@@ -44,7 +42,7 @@ async function inserirImgTitle(id){
 }
 
 //  SO MUDAR ESSE ID 
-const id = show
+const id = sessionStorage.getItem('alfandegadoid')
 console.log(id)
 
 const btn = document.querySelector("#sendb")
