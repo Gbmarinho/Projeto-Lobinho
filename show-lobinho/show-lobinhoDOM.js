@@ -1,6 +1,4 @@
-// const name = "Joao"
-// const descricao = "Lindo"
-// const imagem = "https://www.tutorialspoint.com/css/images/responsive.jpg"
+
 
 async function deleteWolve(id) {
     const urlAPI = 'https://lobinhos.herokuapp.com/wolves/'
@@ -44,7 +42,8 @@ async function inserirHTML() {
     </div>`
 }
 
-const id = 
+const id = require("../lista-lobinhos/lista-lobinhos.js")
+console.log(id)
 inserirHTML(id)
 
 const btnExcluir = document.querySelector('#btn-excluir')
