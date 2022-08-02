@@ -36,8 +36,6 @@ async function carregarpagina(){
 }
 carregarpagina()
 function show(id){
-    var juiz = id
-    module.exports = 
     window.location.replace("../show-lobinho/show-lobinho.html")
 }
 function mostrarpadotar(array){
