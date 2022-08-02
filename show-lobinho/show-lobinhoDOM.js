@@ -1,5 +1,5 @@
 
-
+import ids  from  "../lista-lobinhos/lista-lobinhos.js"
 async function deleteWolve(id) {
     const urlAPI = 'https://lobinhos.herokuapp.com/wolves/'
 
@@ -42,7 +42,7 @@ async function inserirHTML() {
     </div>`
 }
 
-const id = require("../lista-lobinhos/lista-lobinhos.js")
+const id = ids
 console.log(id)
 inserirHTML(id)
 

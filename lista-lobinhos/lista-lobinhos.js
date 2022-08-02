@@ -35,7 +35,10 @@ async function carregarpagina(){
     
 }
 carregarpagina()
+var alfandegadoid = 87
+
 function show(id){
+    alfandegadoid = id
     window.location.replace("../show-lobinho/show-lobinho.html")
 }
 function mostrarpadotar(array){
