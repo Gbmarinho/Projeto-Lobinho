@@ -1,5 +1,3 @@
-
-
 const btn = document.querySelector("#sendb")
 const nome = document.querySelector("#nametext")
 const anos = document.querySelector("#yeartext")
@@ -25,15 +23,24 @@ btn.addEventListener("click", () => {
     }else if((d != true)||((descricao.value.length < 10)||(descricao.value.length > 255))){
 
     }else{
-        var newLobo = new Object()
-        newLobo.name = nome.value.trim()
-        newLobo.age = anos.value.trim()
-        newLobo.image_url = linkFoto.value.trim()
-        newLobo.description = descricao.value.trim()
-        newLobo.adopter_name = null
-        newLobo.adopter_email = null
-        newLobo.adopter_age = null
-        newLobo.adopted = false
+        const array =   {
+        wolf: {
+            name: nome.value.trim(),
+            age: anos.value,
+            image_url: linkFoto.value,
+            description: descricao.value
+            }
+        }
+        async function postWolf(){
+            const urlAPI = "https://lobinhos.herokuapp.com/wolves"
+            const fetchConf = {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify(array)
+            }
+            await fetch (urlAPI,fetchConf)
+        }
+        postWolf()
         nome.value = ""
         anos.value = ""
         linkFoto.value = ""
