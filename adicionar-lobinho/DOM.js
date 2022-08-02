@@ -41,9 +41,6 @@ btn.addEventListener("click", () => {
             await fetch (urlAPI,fetchConf)
         }
         postWolf()
-        nome.value = ""
-        anos.value = ""
-        linkFoto.value = ""
-        descricao.value = ""
+
     }
 })
