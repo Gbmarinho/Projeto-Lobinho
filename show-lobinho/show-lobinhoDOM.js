@@ -1,6 +1,3 @@
-// const name = "Joao"
-// const descricao = "Lindo"
-// const imagem = "https://www.tutorialspoint.com/css/images/responsive.jpg"
 
 async function deleteWolve(id) {
     const urlAPI = 'https://lobinhos.herokuapp.com/wolves/'
@@ -24,7 +21,7 @@ async function getWolve(id) {
     return res
 }
 
-async function inserirHTML() {
+async function inserirHTML(id) {
 
     const arrayAdotados = await getWolve(id)
     const main = document.querySelector("main")
@@ -43,16 +40,16 @@ async function inserirHTML() {
         </div>
     </div>`
 }
-
-const id = 
+const id = sessionStorage.getItem('alfandegadoid')
+console.log(id)
 inserirHTML(id)
 
 const btnExcluir = document.querySelector('#btn-excluir')
 
 async function deletar(id){
     deleteWolve(id);
-    alert("Parabens seu lobinho foi adotado com sucesso!!")
-    window.location.replace("../home-page/index.html")
+    alert("ABANDONO DE ANIMAIS É CRIME")
+    window.location.href = "../lista-lobinhos/lista-lobinhos.html"
 }
 
 async function adotar(){
