@@ -193,15 +193,50 @@ header {
 .text-block p{
     font-size: 20px;
 }
-.img-valores{
+.img-valores-1{
     /* border-radius: 360px; */
     width: 200px;
     height: 95%;
+    background: url(../assets/033\ \ \ Insurance.png) no-repeat;
+    background-position: center center;
+    background-size: 140px 140px;
     border-radius: 180px;
     background-color: white;
     display: flex;
 }
-
+.img-valores-2{
+    /* border-radius: 360px; */
+    width: 200px;
+    height: 95%;
+    background: url(../assets/care.png) no-repeat;
+    background-position: center center;
+    background-size: 140px 140px;
+    border-radius: 180px;
+    background-color: white;
+    display: flex;
+}
+.img-valores-3{
+    /* border-radius: 360px; */
+    width: 200px;
+    height: 95%;
+    background: url(../assets/Frame.png) no-repeat;
+    background-position: center center;
+    background-size: 140px 140px;
+    border-radius: 180px;
+    background-color: white;
+    display: flex;
+}
+.img-valores-4{
+    /* border-radius: 360px; */
+    width: 200px;
+    height: 95%;
+    background: url(../assets/011\ \ \ Rescue\ Dog.png) no-repeat;
+    background-position: center center;
+    background-size: 140px 140px;
+    border-radius: 180px;
+    background-color: white;
+    display: flex;
+}
     /* Lobos Exemplos */
 #exemploLobos{
     display: flex;
