@@ -42,6 +42,9 @@ function funcsPage(){
                 await fetch (urlAPI,fetchConf)
             }
             postWolf()
+            alert("Seu lobo foi adotado com sucesso")
+    
+            window.location.replace("../home-page/index.html")
 
         }
     })
