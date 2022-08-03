@@ -96,7 +96,10 @@ main{
 #searchimg{
     height: 30px;
     cursor: pointer;
+    margin-left: 0.5%;
 } 
+
+
 
 #searchtext{
     border: none;
@@ -104,11 +107,18 @@ main{
     height: 30px;
     margin-left: 5px;
     font-size: x-large;
+    text-indent: 1%;
 }
 #searchtext:focus{
     box-shadow: 0 0 0 0;
     outline: 0;
 }
+
+#searchimg:hover {
+    height: 34px;
+    cursor: pointer;
+}
+
 #btnaddlobo{
     text-decoration: none;
     text-align: center;
@@ -119,6 +129,11 @@ main{
     min-width: 102px;
     font-size: xx-large;
 }
+
+#btnaddlobo:hover {
+    background-color: #2C5680;
+}
+
 #checkadotados{
     margin-top: 1vh; ;
     display: flex;
@@ -226,6 +241,7 @@ main{
     justify-content: space-between;
 }
 .btn-show{
+    cursor: pointer;
     text-decoration: none;
     text-align: center;
     color: white;
@@ -236,7 +252,14 @@ main{
     font-size: xx-large;
     padding: 5px;
 }
+
+.btn-show:hover {
+    background-color: #2C5680;
+}
+
+
 .btn-adotado{
+    cursor: pointer;
     padding: 5px; ;
     text-decoration: none;
     text-align: center;
@@ -247,6 +270,11 @@ main{
     min-width: 120px;
     font-size: xx-large;
 }
+
+.btn-adotado:hover {
+    background-color: #DEB959;
+}
+
 @media (max-width: 1170px){
     .left{
         display: flex;
@@ -260,6 +288,7 @@ main{
     .right-info{
         text-align: left;
     }
+
     .namebutton-right{
         flex-direction: row-reverse;
     }

@@ -107,6 +107,7 @@ span {
     margin-bottom: 10px;
 }
 #nametext{
+    text-indent: 3%;
     width: 100%;
     
 }
@@ -119,6 +120,7 @@ span {
     margin-bottom: 10px;
 }
 #yeartext{
+    text-indent: 3%;
     width: 100%;
 }
 #email{
@@ -132,6 +134,7 @@ span {
     margin-bottom: 10px;
 }
 #emailtext{
+    text-indent: 3%;
     width: 100% 
 }
 .textbox{
@@ -190,6 +193,10 @@ span {
     min-width: 150px;
     font-size: 20px;
     font-weight: 800;
+}
+
+#sendb:hover {
+    background-color: #DEB959;
 }
 
 input {
