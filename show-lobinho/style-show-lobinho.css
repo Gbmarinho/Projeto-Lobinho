@@ -81,12 +81,13 @@ span {
 
 
 main {
+    margin-top: 50px;
+    margin-bottom: 100px;
     display: flex;
     flex-direction: column;
     height: 30vw;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-
 }
 
 
@@ -99,6 +100,7 @@ h1 {
 .container-lobo {
 
     width: 55%;
+    min-width: 480px;
     min-height: 68%;
     max-height: 70%;
     display: flex;
@@ -107,7 +109,6 @@ h1 {
     justify-content: space-evenly;
     margin-bottom: 3%;
     margin-top: 80px;
-    min-width: 330px;
     
 }
 
@@ -122,7 +123,6 @@ h1 {
 
 #text {
     max-height: 100%;
-    
     white-space: pre-line;
     font-family: Darker Grotesque;
     font-size: 130%;
@@ -130,17 +130,13 @@ h1 {
     line-height: 20px;
     letter-spacing: 0em;
     text-align: left;
-    margin-bottom: 10%;
-    
-    
-    
-    
+    margin-bottom: 10%;  
 }
 
 .img-btns {
     height: 100%;
-    min-width: 47%;
-    max-width: 47%;
+    min-width: 220px;
+    min-height: 160px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -150,6 +146,8 @@ h1 {
 
 #img-lobo {
     width: 80%;
+    min-width: 175px;
+    min-height: 110px;
     height: 70%;
     box-shadow: -40px -40px 0px 0px #2C5680;
 }
@@ -202,8 +200,8 @@ h1 {
 }
 
 
-
 footer{
+    max-height: auto;
     margin-top: 8vh;
     border-top: 5px solid;
     border-image: linear-gradient(90deg, rgba(222,185,89,1) 43%, rgba(44,86,128,1) 100%) 1;
@@ -289,7 +287,15 @@ footer{
         justify-content: start;
         
     }
-    #text{text-align: center;}
+    #text{text-align: center;
+    }
+    .container-lobo{
+        margin-top: 150px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
     #contato {
         display: flex;
         flex-direction: column;
