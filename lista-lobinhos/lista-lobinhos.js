@@ -47,33 +47,38 @@ function LoadingListWolvesToAdopt(array){
             if(!(cont%2==0) ){
                 const lobosleft = document.createElement("div")
                 lobosleft.classList.add("bloco-lobo")
-                lobosleft.innerHTML = `<div class="img-lobo">
-                    <img class="img-left" src=${objetoItem.image_url}>
-                </div>
-                <div class="info-lobo">
-                    <div class="namebutton-left">
-                        <h1><b>${objetoItem.name}</b></h1>
-                        <button type="submit" class="btn-show" onclick="changePage(${objetoItem.id})">Adotar</button value="${objetoItem.id}">
+                lobosleft.innerHTML = `<div class="bloco-lobo left">
+                    <div class="img-lobo">
+                        <img class="img-left" src=${objetoItem.image_url}>
                     </div>
-                    
-                    <h4>Idade: ${objetoItem.age} anos</h4>
-                    <p><b>${objetoItem.description}</b></p>
+                    <div class="info-lobo">
+                        <div class="namebutton-left">
+                            <h1><b>${objetoItem.name}</b></h1>
+                            <button type="submit" class="btn-show" onclick="changePage(${objetoItem.id})" value = "${objetoItem.id}">Adotado</button>
+                        </div>
+                        
+                        <h4>Idade: ${objetoItem.age} anos</h4>
+                        <p><b>${objetoItem.description}</b></p>
+                        
+                    </div>
                 </div>`
                 selector.appendChild(lobosleft)
             } else {
                 const lobosright = document.createElement("div")
                 lobosright.classList.add("bloco-lobo")
-                lobosright.innerHTML = `<div class="info-lobo-right right-info">
-                    <div class="namebutton-right">
-                        <button type="submit" class="btn-show" onclick="changePage(${objetoItem.id})" value="${objetoItem.id}">Adotar</button>
-                        <h1><b>${objetoItem.name}</b></h1>
+                lobosright.innerHTML = `<div class="bloco-lobo right">
+                    <div class="info-lobo-right right-info">
+                        <div class="namebutton-right">
+                            <button type="submit" class="btn-show" onclick="changePage(${objetoItem.id})" value = "${objetoItem.id}">Adotado</button>
+                            <h1><b>${objetoItem.name}</b></h1>
+                        </div>
+                        <h4>Idade: ${objetoItem.age} anos</h4>
+                        <p><b>${objetoItem.description}</b></p>
+                        
                     </div>
-                    <h4>Idade: ${objetoItem.age} anos</h4>
-                    <p><b>${objetoItem.description}</b></p>
-                
-                </div>
-                <div class="img-lobo">
-                    <img class="img-right" src=${objetoItem.image_url}>  
+                    <div class="img-lobo">
+                        <img class="img-right" src=${objetoItem.image_url}>  
+                    </div>
                 </div>`
                 selector.appendChild(lobosright)
             }
