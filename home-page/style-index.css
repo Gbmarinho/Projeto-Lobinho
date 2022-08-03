@@ -198,7 +198,8 @@ header {
     width: 200px;
     height: 95%;
     border-radius: 180px;
-    background-color: greenyellow;
+    background-color: white;
+    display: flex;
 }
 
     /* Lobos Exemplos */
