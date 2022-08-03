@@ -284,6 +284,7 @@ main{
         display: flex;
         justify-content: center;
         flex-wrap: wrap-reverse;
+        flex-direction: column-reverse;
     }
     .right-info{
         text-align: left;
