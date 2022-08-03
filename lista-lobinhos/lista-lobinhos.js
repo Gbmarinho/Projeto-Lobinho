@@ -1,4 +1,4 @@
-async function getWolve() {
+async function getWolveToAdopt() {
     const urlAPI = 'https://lobinhos.herokuapp.com/wolves'
 
     const fetchConfig = {
@@ -6,10 +6,12 @@ async function getWolve() {
     }
 
     const response = await fetch(urlAPI, fetchConfig)
-    const res = await response.json()
-    return res
+    const arrayJSON = await response.json()
+    
+    return arrayJSON
 }
-async function getWolvea() {
+
+async function getWolveAdopted() {
     const urlAPI = 'https://lobinhos.herokuapp.com/wolves/adopted'
 
     const fetchConfig = {
@@ -17,139 +19,89 @@ async function getWolvea() {
     }
 
     const response = await fetch(urlAPI, fetchConfig)
-    const res = await response.json()
-    return res
-}
-async function carregarpagina(){
-    var checkbox = document.querySelector('#checkbox')
-    const arrayLobinhos = await getWolve()
-    const arrayAdotados = await getWolvea()
+    const arrayJSON = await response.json()
     
-    const input = document.querySelector("#searchtext") 
-    const btn = document.querySelector("#searchimg")
-    
-    mostrarpadotar(arrayLobinhos)
-
-    btn.addEventListener('click', () => {
-        pesquisaAdotar(arrayLobinhos, input.value.trim())
-
-
-    })
-
-
-    checkbox.addEventListener('change', async function() { 
-        const inputText = document.querySelector("#searchtext") 
-        const btnPesquisar = document.querySelector("#searchimg")
-        
-        if (!checkbox.checked) {
-            mostrarpadotar(arrayLobinhos)
-
-            btnPesquisar.addEventListener('click', () => {
-                pesquisaAdotar(arrayLobinhos, inputText.value.trim())
-
-
-
-            })
-
-        } else {
-            const Text = document.querySelector("#searchtext") 
-            const Pesquisar = document.querySelector("#searchimg")
-
-            mostraradotados(arrayAdotados)
-
-            Pesquisar.addEventListener('click', () => {
-                pesquisaAdotados(arrayAdotados, Text.value.trim())
-
-
-            })
-
-        }
-    });
-    
-}
-function show(id){
-    sessionStorage.setItem('alfandegadoid', id);
-    window.location.replace("../show-lobinho/show-lobinho.html")
+    return arrayJSON
 }
 
-function mostrarpadotar(array){
-    const loboscontent = document.querySelector("#lobos-content")
-    const botaolist = document.querySelector("#paginacao")
+function LoadingListWolvesToAdopt(array){
+    const lobosContent = document.querySelector("#lobos-content")
+    const PageButton = document.querySelector("#paginacao")
 
-    let pagina_atual = 1
-    let itens_por_pagina = 4
+    let CurrentPage = 1
+    let itemsPerPage = 4
 
-    function paginacacaoLobinho(itens, seletor, itens_por_pagina, pagina_atual){
-        seletor.innerHTML = ``
-        pagina_atual--
+    function paginationWolve(items, selector, itemsPerPage, CurrentPage){
+        selector.innerHTML = ``
+        CurrentPage--
 
         var cont = 1
-        let inicio = itens_por_pagina * pagina_atual
-        let fim = inicio + itens_por_pagina
-        let paginacao_itens = itens.slice(inicio, fim)
-        for (let i = 0; i < paginacao_itens.length; i++){
-            let  j = paginacao_itens[i]
-            console.log(i, paginacao_itens[i])
+        let start = itemsPerPage * CurrentPage
+        let end = start + itemsPerPage
+        let paginationItems = items.slice(start, end)
+        for (let i = 0; i < paginationItems.length; i++){
+            let  objetoItem = paginationItems[i]
+            console.log(i, paginationItems[i])
             
 
             if(!(cont%2==0) ){
                 const lobosleft = document.createElement("div")
                 lobosleft.classList.add("bloco-lobo")
                 lobosleft.innerHTML = `<div class="img-lobo">
-                    <img class="img-left" src=${j.image_url}>
+                    <img class="img-left" src=${objetoItem.image_url}>
                 </div>
                 <div class="info-lobo">
                     <div class="namebutton-left">
-                        <h1><b>${j.name}</b></h1>
-                        <button type="submit" class="btn-show" onclick="show(${j.id})">Adotar</button value="${j.id}">
+                        <h1><b>${objetoItem.name}</b></h1>
+                        <button type="submit" class="btn-show" onclick="changePage(${objetoItem.id})">Adotar</button value="${objetoItem.id}">
                     </div>
                     
-                    <h4>Idade: ${j.age} anos</h4>
-                    <p><b>${j.description}</b></p>
+                    <h4>Idade: ${objetoItem.age} anos</h4>
+                    <p><b>${objetoItem.description}</b></p>
                 </div>`
-                seletor.appendChild(lobosleft)
+                selector.appendChild(lobosleft)
             } else {
                 const lobosright = document.createElement("div")
                 lobosright.classList.add("bloco-lobo")
                 lobosright.innerHTML = `<div class="info-lobo-right right-info">
                     <div class="namebutton-right">
-                        <button type="submit" class="btn-show" onclick="show(${j.id})" value="${j.id}">Adotar</button>
-                        <h1><b>${j.name}</b></h1>
+                        <button type="submit" class="btn-show" onclick="changePage(${objetoItem.id})" value="${objetoItem.id}">Adotar</button>
+                        <h1><b>${objetoItem.name}</b></h1>
                     </div>
-                    <h4>Idade: ${j.age} anos</h4>
-                    <p><b>${j.description}</b></p>
+                    <h4>Idade: ${objetoItem.age} anos</h4>
+                    <p><b>${objetoItem.description}</b></p>
                 
                 </div>
                 <div class="img-lobo">
-                    <img class="img-right" src=${j.image_url}>  
+                    <img class="img-right" src=${objetoItem.image_url}>  
                 </div>`
-                seletor.appendChild(lobosright)
+                selector.appendChild(lobosright)
             }
 
             cont++
         }
     }
 
-    function configPagination (items, seletor, itens_por_pagina) {
-        seletor.innerHTML = ``
-        let contador = Math.ceil(items.length / itens_por_pagina);
-        for (let i = 1; i < contador + 1; i++) {
-            let btn = paginacaoBotao(i, items);
-            seletor.appendChild(btn);
+    function configPagination (items, selector, itemsPerPage) {
+        selector.innerHTML = ``
+        let cont = Math.ceil(items.length / itemsPerPage);
+        for (let i = 1; i < cont + 1; i++) {
+            let btn = paginationButton(i, items);
+            selector.appendChild(btn);
         }
     }
-    function paginacaoBotao (pagina, items) {
+    function paginationButton (page, items) {
         let btn = document.createElement('button');
-        btn.innerText = pagina;
+        btn.innerText = page;
     
-        if (pagina_atual == pagina) btn.classList.add('active');
+        if (CurrentPage == page) btn.classList.add('active');
     
         btn.addEventListener('click', function () {
-            pagina_atual = pagina;
-            paginacacaoLobinho(items, loboscontent, itens_por_pagina, pagina_atual);
+            CurrentPage = page;
+            paginationWolve(items, lobosContent, itemsPerPage, CurrentPage);
     
-            let atual_btn = document.querySelector('.numero-paginas button.active');
-            atual_btn.classList.remove('active');
+            let currentButton = document.querySelector('.numero-paginas button.active');
+            currentButton.classList.remove('active');
     
             btn.classList.add('active');
         });
@@ -158,28 +110,28 @@ function mostrarpadotar(array){
     }
 
     
-    paginacacaoLobinho(array, loboscontent, itens_por_pagina, pagina_atual);
-    configPagination(array, botaolist, itens_por_pagina);
+    paginationWolve(array, lobosContent, itemsPerPage, CurrentPage);
+    configPagination(array, PageButton, itemsPerPage);
 }
 
-function mostraradotados(array){
-    const loboscontent = document.querySelector("#lobos-content")
-    const botaolist = document.querySelector("#paginacao")
+function LoadingListWolvesAdopted(array){
+    const lobosContent = document.querySelector("#lobos-content")
+    const PageButton = document.querySelector("#paginacao")
 
-    let pagina_atual = 1
-    let itens_por_pagina = 4
+    let CurrentPage = 1
+    let itemsPerPage = 4
 
-    function paginacacaoLobinho(itens, seletor, itens_por_pagina, pagina_atual){
-        seletor.innerHTML = ``
-        pagina_atual--
+    function paginationWolve(items, selector, itemsPerPage, CurrentPage){
+        selector.innerHTML = ``
+        CurrentPage--
 
         var cont = 1
-        let inicio = itens_por_pagina * pagina_atual
-        let fim = inicio + itens_por_pagina
-        let paginacao_itens = itens.slice(inicio, fim)
-        for (let i = 0; i < paginacao_itens.length; i++){
-            let  j = paginacao_itens[i]
-            console.log(i, paginacao_itens[i])
+        let start = itemsPerPage * CurrentPage
+        let end = start + itemsPerPage
+        let paginationItems = items.slice(start, end)
+        for (let i = 0; i < paginationItems.length; i++){
+            let  objetoItem = paginationItems[i]
+            console.log(i, paginationItems[i])
             
 
             if(!(cont%2==0) ){
@@ -187,64 +139,64 @@ function mostraradotados(array){
                 lobosleft.classList.add("bloco-lobo")
                 lobosleft.innerHTML = `<div class="bloco-lobo left">
                     <div class="img-lobo">
-                        <img class="img-left" src=${j.image_url}>
+                        <img class="img-left" src=${objetoItem.image_url}>
                     </div>
                     <div class="info-lobo">
                         <div class="namebutton-left">
-                            <h1><b>${j.name}</b></h1>
-                            <button type="submit" class="btn-adotado" onclick="show(${j.id})" value = "${j.id}">Adotado</button>
+                            <h1><b>${objetoItem.name}</b></h1>
+                            <button type="submit" class="btn-adotado" onclick="changePage(${objetoItem.id})" value = "${objetoItem.id}">Adotado</button>
                         </div>
                         
-                        <h4>Idade: ${j.age} anos</h4>
-                        <p><b>${j.description}</b></p>
-                        <p><b>Adotado por: ${j.adopter_name}</b></p>
+                        <h4>Idade: ${objetoItem.age} anos</h4>
+                        <p><b>${objetoItem.description}</b></p>
+                        <p><b>Adotado por: ${objetoItem.adopter_name}</b></p>
                     </div>
                 </div>`
-                seletor.appendChild(lobosleft)
+                selector.appendChild(lobosleft)
             } else {
                 const lobosright = document.createElement("div")
                 lobosright.classList.add("bloco-lobo")
                 lobosright.innerHTML = `<div class="bloco-lobo right">
                     <div class="info-lobo-right right-info">
                         <div class="namebutton-right">
-                            <button type="submit" class="btn-adotado" onclick="show(${j.id})" value = "${j.id}">Adotado</button>
-                            <h1><b>${j.name}</b></h1>
+                            <button type="submit" class="btn-adotado" onclick="changePage(${objetoItem.id})" value = "${objetoItem.id}">Adotado</button>
+                            <h1><b>${objetoItem.name}</b></h1>
                         </div>
-                        <h4>Idade: ${j.age} anos</h4>
-                        <p><b>${j.description}</b></p>
-                        <p><b>Adotado por: ${j.adopter_name}</b></p>
+                        <h4>Idade: ${objetoItem.age} anos</h4>
+                        <p><b>${objetoItem.description}</b></p>
+                        <p><b>Adotado por: ${objetoItem.adopter_name}</b></p>
                     </div>
                     <div class="img-lobo">
-                        <img class="img-right" src=${j.image_url}>  
+                        <img class="img-right" src=${objetoItem.image_url}>  
                     </div>
                 </div>`
-                seletor.appendChild(lobosright)
+                selector.appendChild(lobosright)
             }
 
             cont++
         }
     }
 
-    function configPagination (items, seletor, itens_por_pagina) {
-        seletor.innerHTML = ``
-        let contador = Math.ceil(items.length / itens_por_pagina);
-        for (let i = 1; i < contador + 1; i++) {
-            let btn = paginacaoBotao(i, items);
-            seletor.appendChild(btn);
+    function configPagination (items, selector, itemsPerPage) {
+        selector.innerHTML = ``
+        let cont = Math.ceil(items.length / itemsPerPage);
+        for (let i = 1; i < cont + 1; i++) {
+            let btn = paginationButton(i, items);
+            selector.appendChild(btn);
         }
     }
-    function paginacaoBotao (pagina, items) {
+    function paginationButton (page, items) {
         let btn = document.createElement('button');
-        btn.innerText = pagina;
+        btn.innerText = page;
     
-        if (pagina_atual == pagina) btn.classList.add('active');
+        if (CurrentPage == page) btn.classList.add('active');
     
         btn.addEventListener('click', function () {
-            pagina_atual = pagina;
-            paginacacaoLobinho(items, loboscontent, itens_por_pagina, pagina_atual);
+            CurrentPage = page;
+            paginationWolve(items, lobosContent, itemsPerPage, CurrentPage);
     
-            let atual_btn = document.querySelector('.numero-paginas button.active');
-            atual_btn.classList.remove('active');
+            let currentButton = document.querySelector('.numero-paginas button.active');
+            currentButton.classList.remove('active');
     
             btn.classList.add('active');
         });
@@ -253,24 +205,69 @@ function mostraradotados(array){
     }
 
     
-    paginacacaoLobinho(array, loboscontent, itens_por_pagina, pagina_atual);
-    configPagination(array, botaolist, itens_por_pagina);
+    paginationWolve(array, lobosContent, itemsPerPage, CurrentPage);
+    configPagination(array, PageButton, itemsPerPage);
 }
 
-function pesquisaAdotar(array, value){
-    const arrayA = Object.values(array)
-    const newArray = arrayA.filter((item) => item.name.toLowerCase().includes(value.toLowerCase()))
+function searchToAdopt(array, value){
+    const newArray = Object.values(array)
+    const arrayFiltered = newArray.filter((item) => item.name.toLowerCase().includes(value.toLowerCase()))
 
-    mostrarpadotar(newArray)
+    LoadingListWolvesToAdopt(arrayFiltered)
 
 }
 
-function pesquisaAdotados(array, value){
-    const arrayA = Object.values(array)
-    const newArray = arrayA.filter((item) => item.name.toLowerCase().includes(value.toLowerCase()))
+function searchAdopted(array, value){
+    const newArray = Object.values(array)
+    const arrayFiltered = newArray.filter((item) => item.name.toLowerCase().includes(value.toLowerCase()))
 
-    mostraradotados(newArray)
+    LoadingListWolvesAdopted(arrayFiltered)
 }
 
-carregarpagina()
-var alfandegadoid 
+function changePage(id){
+    sessionStorage.setItem('alfandegadoid', id);
+    window.location.replace("../show-lobinho/show-lobinho.html")
+}
+
+async function funcsPage(){
+    
+    const arrayToAdopt = await getWolveToAdopt()
+    const arrayAdotados = await getWolveAdopted()
+    
+    const checkbox = document.querySelector('#checkbox')
+    const searchValue = document.querySelector("#searchtext") 
+    const searchButton = document.querySelector("#searchimg")
+    
+    LoadingListWolvesToAdopt(arrayToAdopt)
+
+    searchButton.addEventListener('click', () => {
+        searchToAdopt(arrayToAdopt, searchValue.value.trim())
+
+
+    })
+
+
+    checkbox.addEventListener('change', async function() { 
+        const searchValue = document.querySelector("#searchtext") 
+        const searchButton = document.querySelector("#searchimg")
+        
+        if (!checkbox.checked) {
+            LoadingListWolvesToAdopt(arrayToAdopt)
+
+            searchButton.addEventListener('click', () => {
+                searchToAdopt(arrayToAdopt, searchValue.value.trim())
+            })
+
+        } else {
+            LoadingListWolvesAdopted(arrayAdotados)
+
+            searchButton.addEventListener('click', () => {
+                searchAdopted(arrayAdotados, searchValue.value.trim())
+            })
+
+        }
+    });
+    
+}
+
+funcsPage()
