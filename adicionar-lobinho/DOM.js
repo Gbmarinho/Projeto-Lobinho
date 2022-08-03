@@ -42,7 +42,7 @@ function funcsPage(){
                 await fetch (urlAPI,fetchConf)
             }
             postWolf()
-            alert("Seu lobo foi adotado com sucesso")
+            alert("Seu lobo foi adicionado com sucesso")
     
             window.location.replace("../home-page/index.html")
 
