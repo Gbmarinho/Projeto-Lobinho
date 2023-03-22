@@ -75,7 +75,7 @@ header {
 
     /* Adote Lobinho */
 #adoteLobinho{
-    background: url(../assets/lobo-image.png) no-repeat;
+    background: url(assets/lobo-image.png) no-repeat;
     background-position: center center;
     background-size: cover;
     display: flex;
@@ -197,7 +197,7 @@ header {
     /* border-radius: 360px; */
     width: 200px;
     height: 95%;
-    background: url(../assets/033\ \ \ Insurance.png) no-repeat;
+    background: url(assets/033\ \ \ Insurance.png) no-repeat;
     background-position: center center;
     background-size: 140px 140px;
     border-radius: 180px;
@@ -208,7 +208,7 @@ header {
     /* border-radius: 360px; */
     width: 200px;
     height: 95%;
-    background: url(../assets/care.png) no-repeat;
+    background: url(assets/care.png) no-repeat;
     background-position: center center;
     background-size: 140px 140px;
     border-radius: 180px;
@@ -219,7 +219,7 @@ header {
     /* border-radius: 360px; */
     width: 200px;
     height: 95%;
-    background: url(../assets/Frame.png) no-repeat;
+    background: url(assets/Frame.png) no-repeat;
     background-position: center center;
     background-size: 140px 140px;
     border-radius: 180px;
@@ -230,7 +230,7 @@ header {
     /* border-radius: 360px; */
     width: 200px;
     height: 95%;
-    background: url(../assets/011\ \ \ Rescue\ Dog.png) no-repeat;
+    background: url(assets/011\ \ \ Rescue\ Dog.png) no-repeat;
     background-position: center center;
     background-size: 140px 140px;
     border-radius: 180px;
